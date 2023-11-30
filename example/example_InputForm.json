@@ -1,0 +1,117 @@
+{
+    "project": {
+        "commands": [
+            {
+                "father": "module",
+                "command": "{\"module_name\":\"InputForm\",\"module\":\"LoadFormFile\",\"file_json\":\"%base_path%/modules/InputForm/example/form.json\"}",
+                "index": 0,
+                "execute_debugg": 0,
+                "img": "",
+                "screenshot": "",
+                "line": 1,
+                "description": "",
+                "stop_onerror": false,
+                "run_onerror": false,
+                "stop_robot_onerror": false,
+                "run_onerror_robot": "",
+                "run_when": "True",
+                "module": "LoadFormFile",
+                "id": "d3b29a95-375b-8844-c2d5-2ad8e8e48edc",
+                "group": "scripts",
+                "mode_live": false,
+                "children": [],
+                "else": [],
+                "execute": 1,
+                "message": "module  {\"module_name\":\"InputForm\",\"module\":\"LoadFormFile\",\"file_json\":\"%base_path%/modules/InputForm/example/form.json\"}",
+                "time": "27.777955532073975",
+                "extra": []
+            }
+        ],
+        "ifs": [],
+        "modules": [],
+        "profile": {
+            "name": "example_InputForm",
+            "description": "",
+            "log_destination": "base_path",
+            "deactivate_log": false
+        },
+        "vars": [
+            {
+                "name": "name",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "pass",
+                "data": "",
+                "type": "password",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "option",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "check",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "address",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "radio_option",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "file",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "new_file",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            },
+            {
+                "name": "folder",
+                "data": "",
+                "type": "string",
+                "category": "",
+                "disabled": false
+            }
+        ],
+        "expose": {
+            "title": {
+                "en": "formInput expose",
+                "es": "formInput expose",
+                "pr": "formInput expose"
+            },
+            "description": {
+                "en": "",
+                "es": "",
+                "pr": ""
+            },
+            "form": []
+        }
+    }
+}
