@@ -1,0 +1,152 @@
+{
+    "author":"David Cuello - Nicolas Garcia",
+    "description": "Creates a form for the end user to enter information to the robot",
+    "description_lang": {
+        "es": "Crea un formulario para que el usuario final ingrese información al robot",
+        "en": "Creates a form for the end user to enter information to the robot",
+        "pr": "Cria um formulário para o usuário final inserir informações no robô"
+    },
+    "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version":"1.0.0",
+    "license": "MIT",
+    "homepage":"http://rocketbot.com/",
+    "linux": true,
+    "windows":true,
+    "mac":true,
+    "docker":true,
+    "name": "InputForm",
+    "dependencies": {},
+    "title": {
+        "en": "Input Form",
+        "es": "Input Form",
+        "pr": "Input Form"
+    },
+    "icon":"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjYWExZDFkIj48cGF0aCBkPSJNMTcgMzF2LTJoMnYyaC0yWiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIwIDRhMyAzIDAgMCAwLTMgM2gtNGEzIDMgMCAwIDAtMyAzdjMxYTMgMyAwIDAgMCAzIDNoMjJhMyAzIDAgMCAwIDMtM1YxMGEzIDMgMCAwIDAtMy0zaC00YTMgMyAwIDAgMC0zLTNoLThabS0xIDNhMSAxIDAgMCAxIDEtMWg4YTEgMSAwIDAgMSAxIDF2MmExIDEgMCAwIDEtMSAxaC04YTEgMSAwIDAgMS0xLTFWN1ptLTMgMTNhMSAxIDAgMSAwIDAgMmg3YTEgMSAwIDEgMCAwLTJoLTdabS0xLTRhMSAxIDAgMCAxIDEtMWgxNS41YTEgMSAwIDEgMSAwIDJIMTZhMSAxIDAgMCAxLTEtMVptMCAxMmExIDEgMCAwIDEgMS0xaDRhMSAxIDAgMCAxIDEgMXY0YTEgMSAwIDAgMS0xIDFoLTRhMSAxIDAgMCAxLTEtMXYtNFptMTMgNGEzIDMgMCAxIDAgMC02YTMgMyAwIDEgMCAwIDZabS02IDQuNWMwLTIuMTE2IDMuOTk3LTMuMTgyIDYtMy4xODJzNiAxLjA2NiA2IDMuMTgyVjM5SDIydi0yLjVaIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L2c+PC9zdmc+",
+    "children": [
+        {
+            "en": {
+                "title": "Load Form File",
+                "description": "Load json file and show in a form",
+                "title_options": null,
+                "options":null
+            },
+            "es": {
+                "title": "Cargar Formulario desde Archivo",
+                "description": "Carga un archivo json y lo muestra en un formulario",
+                "title_options": null,
+                "options":null
+            },
+            "pr": {
+                "title": "Carregar formulário do arquivo",
+                "description": "Carrega um arquivo json e mostra em um formulário",
+                "title_options": null,
+                "options":null
+            },
+            "form": {
+                "css": "",
+                "inputs": [
+                    {
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "form.json",
+                            "en": "form.json",
+                            "pr": "form.json"
+                        },
+                        "title": {
+                            "es": "Ruta del archivo JSON:",
+                            "en": "Path to JSON:",
+                            "pr": "Caminho para JSON:"
+                        },
+                        "description": {
+                            "es": "Ruta del archivo JSON a cargar",
+                            "en": "Path to JSON file to load",
+                            "pr": "Caminho para o arquivo JSON a ser carregado"
+                        },
+                        "help": {
+                            "es": "Ruta del archivo JSON a cargar",
+                            "en": "Path to JSON file to load",
+                            "pr": "Caminho para o arquivo JSON a ser carregado"
+                        },
+                        "id": "file_json",
+                        "css": "col-md-12",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon":"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjYWExZDFkIj48cGF0aCBkPSJNMTYgMjBhMSAxIDAgMSAwIDAgMmg3YTEgMSAwIDEgMCAwLTJoLTdabS0xLTRhMSAxIDAgMCAxIDEtMWgxNS41YTEgMSAwIDEgMSAwIDJIMTZhMSAxIDAgMCAxLTEtMVoiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNSAyOGExIDEgMCAwIDEgMS0xaDRhMSAxIDAgMCAxIDEgMXY0YTEgMSAwIDAgMS0xIDFoLTRhMSAxIDAgMCAxLTEtMXYtNFptMiAzdi0yaDJ2MmgtMlptMTEgMGEzIDMgMCAxIDAgMC02YTMgMyAwIDEgMCAwIDZabTAtMmExIDEgMCAxIDAgLjAwMi0xLjk5OEExIDEgMCAwIDAgMjggMjlabS02IDYuMTgyQzIyIDMzLjA2NiAyNS45OTcgMzIgMjggMzJzNiAxLjA2NiA2IDMuMTgyVjM5SDIydi0zLjgxOFptMi4wNTUuMDRhLjkyNy45MjcgMCAwIDAtLjA1NS4wNTdWMzdoOHYtMS43MmEuOTI3LjkyNyAwIDAgMC0uMDU1LS4wNTljLS4xNjQtLjE2LS40OC0uMzcyLS45NzYtLjU4M2MtMS0uNDI1LTIuMjM0LS42MzgtMi45NjktLjYzOGMtLjczNSAwLTEuOTY5LjIxMy0yLjk2OS42MzhjLS40OTYuMjEtLjgxMi40MjMtLjk3Ni41ODNaIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNyA3YTMgMyAwIDAgMSAzLTNoOGEzIDMgMCAwIDEgMyAzaDRhMyAzIDAgMCAxIDMgM3YzMWEzIDMgMCAwIDEtMyAzSDEzYTMgMyAwIDAgMS0zLTNWMTBhMyAzIDAgMCAxIDMtM2g0Wm0xMSA1YTMgMyAwIDAgMCAzLTNoNGExIDEgMCAwIDEgMSAxdjMxYTEgMSAwIDAgMS0xIDFIMTNhMSAxIDAgMCAxLTEtMVYxMGExIDEgMCAwIDEgMS0xaDRhMyAzIDAgMCAwIDMgM2g4Wm0tOC02YTEgMSAwIDAgMC0xIDF2MmExIDEgMCAwIDAgMSAxaDhhMSAxIDAgMCAwIDEtMVY3YTEgMSAwIDAgMC0xLTFoLThaIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L2c+PC9zdmc+",
+            "module": "LoadFormFile",
+            "module_name": "InputForm",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows":true,
+            "mac":true,
+            "docker":true
+        },
+        {
+            "en": {
+                "title": "Load Form Data",
+                "description": "Load json data and show in a form",
+                "title_options": null,
+                "options":null
+            },
+            "es": {
+                "title": "Cargar Formulario desde Datos",
+                "description": "Carga datos json y los muestra en un formulario",
+                "title_options": null,
+                "options":null
+            },
+            "pr": {
+                "title": "Carregar formulário de dados",
+                "description": "Carrega dados json e mostra em um formulário",
+                "title_options": null,
+                "options":null
+            },
+            "form": {
+                "css": "modal",
+                "inputs": [
+                    {
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "{json_data}",
+                            "en": "{json_data}",
+                            "pr": "{json_data}"
+                        },
+                        "title": {
+                            "es": "Formulario formato JSON:",
+                            "en": "JSON Form:",
+                            "pr": "Formulário JSON:"
+                        },
+                        "description": {
+                            "es": "Formulario formato JSON a cargar",
+                            "en": "JSON Form to load",
+                            "pr": "Formulário JSON para carregar"
+                        },
+                        "id": "form",
+                        "css": "col-md-12",
+                        "data_type": "dict",
+                        "default": null,
+                        "required": true
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon":"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIj48ZyBmaWxsPSIjYWExZDFkIiBjbGlwLXBhdGg9InVybCgjaGVhbHRoaWNvbnNIZWFsdGhXb3JrZXJGb3JtTmVnYXRpdmUwKSI+PHBhdGggZD0iTTIwIDZhMSAxIDAgMCAwLTEgMXYyYTEgMSAwIDAgMCAxIDFoOGExIDEgMCAwIDAgMS0xVjdhMSAxIDAgMCAwLTEtMWgtOFptLTQgMTRhMSAxIDAgMSAwIDAgMmg3YTEgMSAwIDEgMCAwLTJoLTdabS0xLTRhMSAxIDAgMCAxIDEtMWgxNS41YTEgMSAwIDEgMSAwIDJIMTZhMSAxIDAgMCAxLTEtMVoiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNSAyOGExIDEgMCAwIDEgMS0xaDRhMSAxIDAgMCAxIDEgMXY0YTEgMSAwIDAgMS0xIDFoLTRhMSAxIDAgMCAxLTEtMXYtNFptMiAzdi0yaDJ2MmgtMloiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGQ9Ik0yOCAzMmEzIDMgMCAxIDAgMC02YTMgMyAwIDEgMCAwIDZabS02IDQuNWMwLTIuMTE2IDMuOTk3LTMuMTgyIDYtMy4xODJzNiAxLjA2NiA2IDMuMTgyVjM5SDIydi0yLjVaIi8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMCAwaDQ4djQ4SDBWMFptMTcgN2EzIDMgMCAwIDEgMy0zaDhhMyAzIDAgMCAxIDMgM2g0YTMgMyAwIDAgMSAzIDN2MzFhMyAzIDAgMCAxLTMgM0gxM2EzIDMgMCAwIDEtMy0zVjEwYTMgMyAwIDAgMSAzLTNoNFoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImhlYWx0aGljb25zSGVhbHRoV29ya2VyRm9ybU5lZ2F0aXZlMCI+PHBhdGggZD0iTTAgMGg0OHY0OEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvZz48L3N2Zz4=",
+            "module": "LoadFormData",
+            "module_name": "InputForm",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows":true,
+            "mac":true,
+            "docker":true
+        }
+    ]
+}

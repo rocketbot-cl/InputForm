@@ -1,0 +1,103 @@
+{
+    "window": {
+        "title": "Example form",
+        "width": 600,
+        "height": 900,
+        "resizable": true,
+        "submit": "Submit"
+    },
+    "inputs": [ 
+        {
+            "type": "label",
+            "title": "Example text",
+            "id": "text",
+            "css": "col-md-12"
+        },
+        {
+            "type": "input",
+            "title": "Enter your name",
+            "id": "name",
+            "format": "text",
+            "css": "col-md-12"
+        },
+        {
+            "type": "input",
+            "title": "Enter your password",
+            "id": "pass",
+            "format": "password",
+            "css": "col-md-12"
+        },
+        {
+            "type": "select",
+            "title": "Select an option",
+            "id": "option",
+            "options": [
+                {
+                    "value": "1",
+                    "text": "Option 1"
+                },
+                {
+                    "value": "2",
+                    "text": "Option 2"
+                },
+                {
+                    "value": "3",
+                    "text": "Option 3"
+                }
+            ],
+            "css": "col-md-12"
+        },
+        {
+            "type": "checkbox",
+            "title": "Check the box",
+            "id": "check",
+            "default": true,
+            "css": "col-md-12"
+        },
+        {
+            "type": "textarea",
+            "title": "Enter your address",
+            "id": "address",
+            "height": 4,
+            "css": "col-md-12"
+        },
+        {
+            "type": "radio",
+            "title": "Select an option",
+            "id": "radio_option",
+            "options": [
+                {
+                    "value": "1",
+                    "text": "Option 1"
+                },
+                {
+                    "value": "2",
+                    "text": "Option 2"
+                },
+                {
+                    "value": "3",
+                    "text": "Option 3"
+                }
+            ],
+            "css": "col-md-12"
+        },
+        {
+            "type": "file_select",
+            "title": "Select a file",
+            "id": "file",
+            "css": "col-md-12"
+        },
+        {
+            "type": "file_save",
+            "title": "Select a file",
+            "id": "new_file",
+            "css": "col-md-12"
+        },
+        {
+            "type": "folder_select",
+            "title": "Select a folder",
+            "id": "folder",
+            "css": "col-md-12"
+        }
+    ]
+}
