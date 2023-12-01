@@ -38,13 +38,13 @@ SetVar = SetVar # type: ignore
 """
 module = GetParams("module")
 
-global InputFormLoadForm, inputs__
+global InputFormLoadForm, mod_inputs__InputForm
 def InputFormLoadForm(form_):
     
-    global saveData2, inputs, window_form, getFileSavePathForm, inputs__
-    inputs__ = {}
+    global saveData2, inputs, mod_window_form_InputForm, getFileSavePathForm, mod_inputs__InputForm
+    mod_inputs__InputForm = {}
     def getFileSavePathForm(inputEntry, type_file):
-        global window_form
+        global mod_window_form_InputForm
         from tkinter import filedialog
         file_path = None
         if type_file == "File":
@@ -117,8 +117,8 @@ def InputFormLoadForm(form_):
 
         if type_file == "NewFile":
             file_path = filedialog.asksaveasfilename()
-        window_form.deiconify()
-        window_form.update()
+        mod_window_form_InputForm.deiconify()
+        mod_window_form_InputForm.update()
         inputEntry.delete(0, tk.END)
         inputEntry.insert(0, file_path)
         return file_path
@@ -128,67 +128,67 @@ def InputFormLoadForm(form_):
 
 
     def saveData2(e):
-        global window_form, inputs__
+        global mod_window_form_InputForm, mod_inputs__InputForm
         if e == 'saveData':
-            for input_ in inputs__:
+            for input_ in mod_inputs__InputForm:
                 try:
                     # Check the input type before getting the value
-                    if inputs__[input_]['type'] in ['checkbox', 'radio']:
-                        value = inputs__[input_]['value'].get()
-                    elif inputs__[input_]['type'] == 'textarea':
-                        value = inputs__[input_]['el'].get('1.0', tk.END)
-                    elif inputs__[input_]['type'] == 'label':
+                    if mod_inputs__InputForm[input_]['type'] in ['checkbox', 'radio']:
+                        value = mod_inputs__InputForm[input_]['value'].get()
+                    elif mod_inputs__InputForm[input_]['type'] == 'textarea':
+                        value = mod_inputs__InputForm[input_]['el'].get('1.0', tk.END)
+                    elif mod_inputs__InputForm[input_]['type'] == 'label':
                         value = None
-                    elif inputs__[input_]['type'] =='select':
-                        value = inputs__[input_]['value']
+                    elif mod_inputs__InputForm[input_]['type'] =='select':
+                        value = mod_inputs__InputForm[input_]['value']
                     else:
-                        value = inputs__[input_]['el'].get()
+                        value = mod_inputs__InputForm[input_]['el'].get()
                     SetVar(input_, value)
                 except Exception as e:
                     pass
 
-        window_form.withdraw()
-        window_form.after(1, lambda: window_form.quit())
+        mod_window_form_InputForm.withdraw()
+        mod_window_form_InputForm.after(1, lambda: mod_window_form_InputForm.quit())
 
     width=form_['window'].get('width', 800)
     height=form_['window'].get('height', 800)
 
-    if  'window_form' in globals():
+    if  'mod_window_form_InputForm' in globals():
         # clear window widgets
         try:
-            for widget in window_form.winfo_children():
+            for widget in mod_window_form_InputForm.winfo_children():
                 widget.destroy()
         except Exception as e:
             pass
         #Show window
-        window_form.deiconify()
+        mod_window_form_InputForm.deiconify()
     else:
-        window_form = ttk.Window(
+        mod_window_form_InputForm = ttk.Window(
             themename="litera"
         )
-        window_form.attributes('-topmost', 1)
+        mod_window_form_InputForm.attributes('-topmost', 1)
 
-    window_form.config(width=width, height=height)
+    mod_window_form_InputForm.config(width=width, height=height)
     # set Title
-    window_form.title(form_['window'].get('title', 'Rocketbot Form'))
+    mod_window_form_InputForm.title(form_['window'].get('title', 'Rocketbot Form'))
     # set size
-    window_form.geometry(f"{width}x{height}")
-    window_form.after(1, lambda: window_form.attributes('-topmost', 0))
+    mod_window_form_InputForm.geometry(f"{width}x{height}")
+    mod_window_form_InputForm.after(1, lambda: mod_window_form_InputForm.attributes('-topmost', 0))
     # set close button action to do nothing
-    window_form.protocol("WM_DELETE_WINDOW", do_nothing)
+    mod_window_form_InputForm.protocol("WM_DELETE_WINDOW", do_nothing)
     
-    window_form.place_window_center()
+    mod_window_form_InputForm.place_window_center()
     if form_['window'].get('resizable', False):
-        window_form.resizable(True, True)
+        mod_window_form_InputForm.resizable(True, True)
     else:
-        window_form.resizable(0, 0)
+        mod_window_form_InputForm.resizable(0, 0)
 
-    tkWindowPanel = ttk.Frame(window_form, width=width)
+    tkWindowPanel = ttk.Frame(mod_window_form_InputForm, width=width)
     tkWindowPanel.pack(fill=tk.BOTH, expand=True)
     text_welcome = ttk.Label(tkWindowPanel, text="Welcome to")
     text_welcome.place(relx=.5, rely=.2, anchor=ttk.CENTER)
 
-    tkWindowFooter = ttk.Frame(window_form, height=50, bootstyle="dark")
+    tkWindowFooter = ttk.Frame(mod_window_form_InputForm, height=50, bootstyle="dark")
     tkWindowFooter.pack(fill='both', side='bottom')
 
 
@@ -209,7 +209,7 @@ def InputFormLoadForm(form_):
 
 
     for inputs_ in form_.get('inputs', []):
-        inputs__[inputs_['id']] = {}
+        mod_inputs__InputForm[inputs_['id']] = {}
         side = ttk.TOP
         if 'css' in inputs_:
             if 'col-md-6' in inputs_['css']:
@@ -219,60 +219,60 @@ def InputFormLoadForm(form_):
 
         if inputs_['type'] == 'label':
             ttk.Label(frm,text=inputs_['title'], wraplength = height - 20 ).pack(side=ttk.TOP)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
 
         if inputs_['type'] == 'input':
             ttk.Label(frm, text=inputs_['title']).pack(side=ttk.TOP, fill=ttk.BOTH)
             if inputs_.get('format') == 'password':
-                inputs__[inputs_['id']]['el'] = ttk.Entry(frm, show="*")
+                mod_inputs__InputForm[inputs_['id']]['el'] = ttk.Entry(frm, show="*")
             else:
-                inputs__[inputs_['id']]['el'] = ttk.Entry(frm)
-            inputs__[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+                mod_inputs__InputForm[inputs_['id']]['el'] = ttk.Entry(frm)
+            mod_inputs__InputForm[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
             
         if inputs_['type'] == 'select':
             ttk.Label(frm,text=inputs_['title']).pack(side=tk.TOP,fill=ttk.BOTH)
             # Extract the option texts
             option_texts = [option['text'] for option in inputs_['options']]
-            inputs__[inputs_['id']]['el'] = ttk.Combobox(frm, values=option_texts, state='readonly')
-            inputs__[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+            mod_inputs__InputForm[inputs_['id']]['el'] = ttk.Combobox(frm, values=option_texts, state='readonly')
+            mod_inputs__InputForm[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
 
             # Bind the selection event
             def on_select(event, id=inputs_['id'], options=inputs_['options']):
                 # Find the value corresponding to the selected text
-                selected_text = inputs__[id]['el'].get()
+                selected_text = mod_inputs__InputForm[id]['el'].get()
                 for option in options:
                     if option['text'] == selected_text:
-                        inputs__[id]['value'] = option['value']
+                        mod_inputs__InputForm[id]['value'] = option['value']
                         break
 
-            inputs__[inputs_['id']]['el'].bind('<<ComboboxSelected>>', on_select)
+            mod_inputs__InputForm[inputs_['id']]['el'].bind('<<ComboboxSelected>>', on_select)
 
         if inputs_['type'] == 'checkbox':
             ttk.Label(frm,text=inputs_['title']).pack(side=tk.TOP,fill=ttk.BOTH)
             # Create a control variable
-            inputs__[inputs_['id']]['value'] = tk.BooleanVar()
+            mod_inputs__InputForm[inputs_['id']]['value'] = tk.BooleanVar()
             # Create a Checkbutton linked to the control variable
-            inputs__[inputs_['id']]['el'] = ttk.Checkbutton(frm, variable=inputs__[inputs_['id']]['value'])
-            inputs__[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+            mod_inputs__InputForm[inputs_['id']]['el'] = ttk.Checkbutton(frm, variable=mod_inputs__InputForm[inputs_['id']]['value'])
+            mod_inputs__InputForm[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
 
         if inputs_['type'] == 'textarea':
             ttk.Label(frm,text=inputs_['title']).pack(side=tk.TOP,fill=ttk.BOTH)
-            inputs__[inputs_['id']]['el'] = ttk.Text(frm, height=inputs_.get('height', 5))
-            inputs__[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+            mod_inputs__InputForm[inputs_['id']]['el'] = ttk.Text(frm, height=inputs_.get('height', 5))
+            mod_inputs__InputForm[inputs_['id']]['el'].pack(side=ttk.TOP, fill=ttk.BOTH)
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
 
         if inputs_['type'] == 'radio':
             ttk.Label(frm,text=inputs_['title']).pack(side=tk.TOP,fill=ttk.BOTH)
             # Create a control variable
-            inputs__[inputs_['id']]['value'] = tk.StringVar()
+            mod_inputs__InputForm[inputs_['id']]['value'] = tk.StringVar()
             # For each option, create a Radiobutton linked to the control variable
             for option in inputs_['options']:
-                rb = ttk.Radiobutton(frm, text=option['text'], variable=inputs__[inputs_['id']]['value'], value=option['value'])
+                rb = ttk.Radiobutton(frm, text=option['text'], variable=mod_inputs__InputForm[inputs_['id']]['value'], value=option['value'])
                 rb.pack(side=tk.TOP, fill=ttk.BOTH)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
         
         if inputs_['type'] in ['file_select', 'file_save', 'folder_select']:
             #Set height frm 
@@ -284,17 +284,17 @@ def InputFormLoadForm(form_):
 
             # Input file path, entry widget width 100% 
 
-            inputs__[inputs_['id']]['el'] = ttk.Entry(frame_search)
-            inputs__[inputs_['id']]['el'].pack(side=ttk.LEFT, fill=ttk.BOTH, expand=True)
-            inputs__[inputs_['id']]['type'] = inputs_['type']
+            mod_inputs__InputForm[inputs_['id']]['el'] = ttk.Entry(frame_search)
+            mod_inputs__InputForm[inputs_['id']]['el'].pack(side=ttk.LEFT, fill=ttk.BOTH, expand=True)
+            mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
             type_file = "File"
             if inputs_['type'] == 'folder_select':
                 type_file = "Folder"
             if inputs_['type'] == 'file_save':
                 type_file = "NewFile"
-            ttk.Button(frame_search, text="Search", width=5, command=lambda inputs_= inputs_, type_file=type_file:getFileSavePathForm(inputs__[inputs_['id']]['el'], type_file)).pack(side=ttk.LEFT)
+            ttk.Button(frame_search, text="Search", width=5, command=lambda inputs_= inputs_, type_file=type_file:getFileSavePathForm(mod_inputs__InputForm[inputs_['id']]['el'], type_file)).pack(side=ttk.LEFT)
     try:
-        window_form.mainloop()
+        mod_window_form_InputForm.mainloop()
     except Exception as e:
         print(e)
 
