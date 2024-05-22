@@ -56,7 +56,7 @@ The module accepts forms with the following data types:
 The label data type is plain text that is displayed in the form. It receives the following parameters:
 - title: Text to display.
 - id: Field identifier.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6, bold).
 
 Example:
 ```json
@@ -75,7 +75,7 @@ The input data type is a text field for entering data. It receives the following
 - format (optional): Text validation format by default is `text`. The available formats are:
     - text: Free text.
     - password: Password.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -102,7 +102,7 @@ The select data type is a dropdown list to select an option. It receives the fol
 - options: List of options to display. Each option is a dictionary with the following parameters:
     - value: Option value that is stored in the variable.
     - text: Text to display.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -133,7 +133,7 @@ The checkbox data type is a check box. It receives the following parameters:
 - title: Text to display.
 - id: Field identifier. Name that the variable in Rocketbot that stores the selected value must have.
 - default (optional): Default value of the box. It can be `true` or `false`. By default it is `false`.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -151,7 +151,7 @@ The textarea data type is a text field for entering multiline data. It receives 
 - title: Text to display.
 - id: Field identifier. Name that the variable in Rocketbot that stores the entered value must have.
 - height (optional): Field height in lines. By default it is `5`.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -171,7 +171,7 @@ The radio data type is a single selection button. It receives the following para
 - options: List of options to display. Each option is a dictionary with the following parameters:
     - value: Option value that is stored in the variable.
     - text: Text to display.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -201,7 +201,7 @@ Example:
 The file_select data type is a text field with a search engine to select a file. It receives the following parameters:
 - title: Text to display.
 - id: Field identifier. Name that the variable in Rocketbot that stores the selected file path must have.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -217,7 +217,7 @@ Example:
 The file_save data type is a text field with a search engine to create or overwrite a file. It receives the following parameters:
 - title: Text to display.
 - id: Field identifier. Name that the variable in Rocketbot that stores the selected file path must have.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json
@@ -233,7 +233,7 @@ Example:
 The folder_select data type is a text field with a search engine to select a folder. It receives the following parameters:
 - title: Text to display.
 - id: Field identifier. Name that the variable in Rocketbot that stores the selected folder path must have.
-- css (optional): Bootstrap classes to apply to the element.
+- css (optional): Bootstrap classes to apply to the element (available: col-md-12, col-md-6).
 
 Example:
 ```json

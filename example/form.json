@@ -21,6 +21,18 @@
             "css": "col-md-12"
         },
         {
+            "type": "label",
+            "title": "Example text in column and bold",
+            "id": "text",
+            "css": "col-md-6 bold"
+        },
+        {
+            "type": "label",
+            "title": "Example text in column and bold",
+            "id": "text",
+            "css": "col-md-6 bold"
+        },
+        {
             "type": "input",
             "title": "Enter your password",
             "id": "pass",
