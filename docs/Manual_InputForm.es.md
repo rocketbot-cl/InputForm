@@ -60,7 +60,7 @@ El módulo acepta formularios con los siguientes tipos de datos:
 El tipo de dato label es un texto plano que se muestra en el formulario. Recibe los siguientes parámetros:
 - title: Texto a mostrar.
 - id: Identificador del campo.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6, bold).
 
 Ejemplo:
 ```json
@@ -79,7 +79,7 @@ El tipo de dato input es un campo de texto para ingresar datos. Recibe los sigui
 - format (opcional): Formato de validación del texto ingresado por defecto es `text`. Los formatos disponibles son:
     - text: Texto libre.
     - password: Contraseña.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -106,7 +106,7 @@ El tipo de dato select es una lista desplegable para seleccionar una opción. Re
 - options: Lista de opciones a mostrar. Cada opción es un diccionario con los siguientes parámetros:
     - value: Valor de la opción que se almacena en la variable.
     - text: Texto a mostrar.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -137,7 +137,7 @@ El tipo de dato checkbox es una casilla de verificación. Recibe los siguientes 
 - title: Texto a mostrar.
 - id: Identificador del campo. Nombre que debe tener la variable en Rocketbot que almacena el valor seleccionado.
 - default (opcional): Valor por defecto de la casilla. Puede ser `true` o `false`. Por defecto es `false`.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -155,7 +155,7 @@ El tipo de dato textarea es un campo de texto para ingresar datos de varias lín
 - title: Texto a mostrar.
 - id: Identificador del campo. Nombre que debe tener la variable en Rocketbot que almacena el valor ingresado.
 - height (opcional): Altura del campo en líneas. Por defecto es `5`.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -175,7 +175,7 @@ El tipo de dato radio es un botón de selección única. Recibe los siguientes p
 - options: Lista de opciones a mostrar. Cada opción es un diccionario con los siguientes parámetros:
     - value: Valor de la opción que se almacena en la variable.
     - text: Texto a mostrar.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -205,7 +205,7 @@ Ejemplo:
 El tipo de dato file_select es un campo de texto con buscador para seleccionar un archivo. Recibe los siguientes parámetros:
 - title: Texto a mostrar.
 - id: Identificador del campo. Nombre que debe tener la variable en Rocketbot que almacena la ruta del archivo seleccionado.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -221,7 +221,7 @@ Ejemplo:
 El tipo de dato file_save es un campo de texto con buscador para crear o sobrescribir un archivo. Recibe los siguientes parámetros:
 - title: Texto a mostrar.
 - id: Identificador del campo. Nombre que debe tener la variable en Rocketbot que almacena la ruta del archivo seleccionado.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json
@@ -237,7 +237,7 @@ Ejemplo:
 El tipo de dato folder_select es un campo de texto con buscador para seleccionar una carpeta. Recibe los siguientes parámetros:
 - title: Texto a mostrar.
 - id: Identificador del campo. Nombre que debe tener la variable en Rocketbot que almacena la ruta de la carpeta seleccionada.
-- css (opcional): Clases Bootstrap a aplicar al elemento.
+- css (opcional): Clases Bootstrap a aplicar al elemento (disponible: col-md-12, col-md-6).
 
 Ejemplo:
 ```json

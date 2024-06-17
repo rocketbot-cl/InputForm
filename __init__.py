@@ -185,8 +185,7 @@ def InputFormLoadForm(form_):
 
     tkWindowPanel = ttk.Frame(mod_window_form_InputForm, width=width)
     tkWindowPanel.pack(fill=tk.BOTH, expand=True)
-    text_welcome = ttk.Label(tkWindowPanel, text="Welcome to")
-    text_welcome.place(relx=.5, rely=.2, anchor=ttk.CENTER)
+
 
     tkWindowFooter = ttk.Frame(mod_window_form_InputForm, height=50, bootstyle="dark")
     tkWindowFooter.pack(fill='both', side='bottom')
@@ -207,18 +206,54 @@ def InputFormLoadForm(form_):
     )
     button_cancel.pack(side=ttk.LEFT, padx=5, pady=10)
 
-
-    for inputs_ in form_.get('inputs', []):
+    row = 0
+    column = 0
+    next_col_md_12 = False
+    for i in range(len(form_.get('inputs', []))):
+        inputs_ = form_['inputs'][i]
+        next_input = form_['inputs'][i+1] if i+1 < len(form_['inputs']) else None
+        if next_input and 'col-md-12' in next_input.get('css', []):
+            next_col_md_12 = True
+            pass
         mod_inputs__InputForm[inputs_['id']] = {}
-        side = ttk.TOP
+
         if 'css' in inputs_:
             if 'col-md-6' in inputs_['css']:
-                side = ttk.LEFT
+                width = 50
+
+                if column == 2:
+                    column = 0
+                    row += 1
+                
+
+                column += 1
+                # side = ttk.LEFT
+            elif 'col-md-12' in inputs_['css']:
+                # if i == 0:
+                #     row += 1
+                column = 1
+
+                width = 100
+
+            if 'bold' in inputs_['css']:
+                font_style = ("TkDefaultFont", 10, "bold")
+            else:
+                font_style = ("TkDefaultFont", 10)
+            
+        else:
+            font_style = ("TkDefaultFont", 10)
+            width = 100
         frm = ttk.Frame(tkWindowPanel, padding=10)
-        frm.pack(side=side,fill=ttk.BOTH, expand=True)
+        frm.place(relx=0.5*(column-1), rely=row*0.1, relwidth=width/100, relheight=0.1)
+
+        if 'col-md-12' in inputs_.get('css', []) or next_col_md_12:
+            row += 1
+            column = 0
+
+        next_col_md_12 = False
 
         if inputs_['type'] == 'label':
-            ttk.Label(frm,text=inputs_['title'], wraplength = height - 20 ).pack(side=ttk.TOP)
+            ttk.Label(frm,text=inputs_['title'], font=font_style, justify=tk.CENTER).pack()
             mod_inputs__InputForm[inputs_['id']]['type'] = inputs_['type']
 
         if inputs_['type'] == 'input':

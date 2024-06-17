@@ -4,7 +4,7 @@ Cria um formulário para o usuário final inserir informações no robô
 
 *Read this in other languages: [English](Manual_InputForm.md), [Português](Manual_InputForm.pr.md), [Español](Manual_InputForm.es.md)*
   
-![banner](imgs/Banner_InputForm.pngjpg)
+![banner](imgs/Banner_InputForm.jpg)
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -58,7 +58,7 @@ O módulo aceita formulários com os seguintes tipos de dados:
 O tipo de dados label é texto simples que é exibido no formulário. Ele recebe os seguintes parâmetros:
 - title: Texto para exibir.
 - id: Identificador do campo.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6, bold).
 
 Exemplo:
 ```json
@@ -77,7 +77,7 @@ O tipo de dados input é um campo de texto para inserir dados. Ele recebe os seg
 - format (opcional): Formato de validação de texto por padrão é `text`. Os formatos disponíveis são:
     - text: Texto livre.
     - password: Senha.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -104,7 +104,7 @@ O tipo de dados select é uma lista suspensa para selecionar uma opção. Ele re
 - options: Lista de opções para exibir. Cada opção é um dicionário com os seguintes parâmetros:
     - value: Valor da opção que é armazenado na variável.
     - text: Texto para exibir.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -135,7 +135,7 @@ O tipo de dados checkbox é uma caixa de seleção. Ele recebe os seguintes par�
 - title: Texto para exibir.
 - id: Identificador do campo. Nome que a variável no Rocketbot que armazena o valor selecionado deve ter.
 - default (opcional): Valor padrão da caixa. Pode ser `true` ou `false`. Por padrão é `false`.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -153,7 +153,7 @@ O tipo de dados textarea é um campo de texto para inserir dados de várias linh
 - title: Texto para exibir.
 - id: Identificador do campo. Nome que a variável no Rocketbot que armazena o valor inserido deve ter.
 - height (opcional): Altura do campo em linhas. Por padrão é `5`.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -173,7 +173,7 @@ O tipo de dados radio é um botão de seleção única. Ele recebe os seguintes 
 - options: Lista de opções para exibir. Cada opção é um dicionário com os seguintes parâmetros:
     - value: Valor da opção que é armazenado na variável.
     - text: Texto para exibir.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -203,7 +203,7 @@ Exemplo:
 O tipo de dados file_select é um campo de texto com mecanismo de pesquisa para selecionar um arquivo. Ele recebe os seguintes parâmetros:
 - title: Texto para exibir.
 - id: Identificador do campo. Nome que a variável no Rocketbot que armazena o caminho do arquivo selecionado deve ter.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -219,7 +219,7 @@ Exemplo:
 O tipo de dados file_save é um campo de texto com mecanismo de pesquisa para criar ou substituir um arquivo. Ele recebe os seguintes parâmetros:
 - title: Texto para exibir.
 - id: Identificador do campo. Nome que a variável no Rocketbot que armazena o caminho do arquivo selecionado deve ter.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
@@ -235,7 +235,7 @@ Exemplo:
 O tipo de dados folder_select é um campo de texto com mecanismo de pesquisa para selecionar uma pasta. Ele recebe os seguintes parâmetros:
 - title: Texto para exibir.
 - id: Identificador do campo. Nome que a variável no Rocketbot que armazena o caminho da pasta selecionada deve ter.
-- css (opcional): Classes de inicialização para aplicar ao elemento.
+- css (opcional): Classes de inicialização para aplicar ao elemento (disponível: col-md-12, col-md-6).
 
 Exemplo:
 ```json
